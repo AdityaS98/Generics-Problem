@@ -26,24 +26,24 @@ class IntGenerics<T> {
      */
 
 
-    public T getVal1() {
-        return Val1;
+    public String getVal1() {
+        return (String) Val1;
     }
 
     public void setVal1(T val1) {
         Val1 = val1;
     }
 
-    public T getVal2() {
-        return Val2;
+    public String getVal2() {
+        return (String) Val2;
     }
 
     public void setVal2(T val2) {
         Val2 = val2;
     }
 
-    public T getVal3() {
-        return Val3;
+    public String getVal3() {
+        return (String) Val3;
     }
 
     public void setVal3(T val3) {
@@ -54,15 +54,22 @@ class IntGenerics<T> {
      * Method to define the greatest integer
      */
 
-    public float findMaximum(float a, float b, float c) {
-        float max = Math.max(Math.max(a, b), c);
-        return max;
-
-
+    public String findMaximum(String a, String b, String c) {
+        String longest = a;
+        if (b.length() > longest.length()) {
+            longest = b;
+        }
+        if (c.length() > longest.length()) {
+            longest = c;
+        }
+        return longest;
     }
 
 
 }
+
+
+
 
 /*
  * Creating a main method
@@ -75,29 +82,29 @@ public class GenericsGreatest {
         /*
          * Creating input for three variables.
          */
-        System.out.println("Enter first decimal value");
+        System.out.println("Enter first Word");
 
-        float a = sc.nextFloat();
+        String a = sc.next();
 
-        System.out.println("Enter second decimal value");
+        System.out.println("Enter second Word");
 
-        float b = sc.nextFloat();
+        String b = sc.next();
 
-        System.out.println("Enter third decimal value");
+        System.out.println("Enter third Word");
 
-        float c = sc.nextFloat();
+        String c = sc.next();
 
         /*
          * To create generic class object
          */
 
-        IntGenerics<Float>gen1 = new IntGenerics(a, b, c);
+        IntGenerics<Float> gen1 = new IntGenerics(a, b, c);
 
         /*
          * To call method findMaximum();
          */
 
-        System.out.println("Maximum number is " + gen1.findMaximum(gen1.getVal1(), gen1.getVal2(), gen1.getVal3()));
+        System.out.println("Character having maximum letters is " + gen1.findMaximum(gen1.getVal1(), gen1.getVal2(), gen1.getVal3()));
 
     }
 }
