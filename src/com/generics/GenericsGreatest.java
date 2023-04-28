@@ -54,8 +54,8 @@ class IntGenerics<T> {
      * Method to define the greatest integer
      */
 
-    public int findMaximum(int a, int b, int c) {
-        int max = Math.max(Math.max(a, b), c);
+    public float findMaximum(float a, float b, float c) {
+        float max = Math.max(Math.max(a, b), c);
         return max;
 
 
@@ -75,23 +75,23 @@ public class GenericsGreatest {
         /*
          * Creating input for three variables.
          */
-        System.out.println("Enter first integer");
+        System.out.println("Enter first decimal value");
 
-        int a = sc.nextInt();
+        float a = sc.nextFloat();
 
-        System.out.println("Enter second integer");
+        System.out.println("Enter second decimal value");
 
-        int b = sc.nextInt();
+        float b = sc.nextFloat();
 
-        System.out.println("Enter third integer");
+        System.out.println("Enter third decimal value");
 
-        int c = sc.nextInt();
+        float c = sc.nextFloat();
 
         /*
          * To create generic class object
          */
 
-        IntGenerics<Integer> gen1 = new IntGenerics(a, b, c);
+        IntGenerics<Float>gen1 = new IntGenerics(a, b, c);
 
         /*
          * To call method findMaximum();
